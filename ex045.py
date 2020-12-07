@@ -24,3 +24,4 @@ if op != op_c:
         print('Você perdeu da máquina!')
 else:
     print('Você empatou com a máquina!')
+print('='*10)
