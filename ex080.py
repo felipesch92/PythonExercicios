@@ -3,14 +3,24 @@
 numeros = []
 tmp = 0
 while True:
-    numeros.append(int(input('Valor: ')))
+    n = int(input('Valor: '))
+    if len(numeros) == 0 or n > numeros[-1]:
+        numeros.append(n)
+    else:
+        pos = 0
+        while pos < len(numeros):
+            if n <= numeros[pos]:
+                numeros.insert(pos, n)
+                break
+            pos += 1
     cond = input('Deseja continuar? [S/N]').upper()
     if cond == 'N':
         break
+'''for x in range(0, len(numeros)):
     for x in range(0, len(numeros)):
-        for x in range(0, len(numeros)):
-            if x < len(numeros) - 1 and numeros[x] > numeros[x+1]:
+        if x < len(numeros) - 1:
+            if numeros[x] > numeros[x+1]:
                 tmp = numeros[x]
                 numeros[x] = numeros[x+1]
-                numeros[x+1] = tmp
+                numeros[x+1] = tmp'''
 print(numeros)
